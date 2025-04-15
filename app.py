@@ -30,7 +30,7 @@ combined_df = pd.concat([acs_bloom_city, acs_bloom_msa, acs_in], ignore_index=Tr
 combined_df['year'] = combined_df['year'].astype(int)
 
 # Color for line graphs
-color_map = {
+line_colors = {
     'Indiana': '#8B0000',
     'Bloomington City': '#003366',
     'Bloomington Metro': '#800080'
@@ -74,7 +74,7 @@ def main():
             y=metric_column,
             color='dataset',
             markers=True,
-            color_discrete_map=color_map,
+            color_discrete_map=line_colors,
             labels={
                 'year': 'Year',
                 metric_column: y_label,
