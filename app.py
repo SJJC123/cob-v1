@@ -1,15 +1,14 @@
-
+# Libraries needed for app only; not including data gathering
 import streamlit as st
 import pandas as pd
 import plotly.express as px
 
-# Load the data
+# Data we gathered as csv files
 acs_bloom_city = pd.read_csv('https://raw.githubusercontent.com/SJJC123/cob-v1/main/acs_bloom_city.csv')
 acs_bloom_msa = pd.read_csv('https://raw.githubusercontent.com/SJJC123/cob-v1/main/acs_bloom_msa.csv')
 acs_in = pd.read_csv('https://raw.githubusercontent.com/SJJC123/cob-v1/main/acs_in.csv')
 bls_bloom = pd.read_csv('https://raw.githubusercontent.com/SJJC123/cob-v1/main/bls_bloom.csv')
 
-# Add dataset labels
 acs_bloom_city['dataset'] = 'Bloomington City'
 acs_bloom_msa['dataset'] = 'Bloomington Metro'
 acs_in['dataset'] = 'Indiana'
@@ -27,18 +26,17 @@ occ_types['percent_rent_burdened'] = occ_types['percent_rent_burdened'].where(
 )
 rent_burdened_occupations = occ_types[occ_types['percent_rent_burdened'] > 0]
 
-# Combine into a single DataFrame
 combined_df = pd.concat([acs_bloom_city, acs_bloom_msa, acs_in], ignore_index=True)
 combined_df['year'] = combined_df['year'].astype(int)
 
-# Color map for custom styling
+# Color for line graphs
 color_map = {
     'Indiana': '#8B0000',
     'Bloomington City': '#003366',
     'Bloomington Metro': '#800080'
 }
 
-# Streamlit app
+# Streamlit app in progress (v1)
 def main():
     st.title('City of Bloomington Housing Trends')
 
