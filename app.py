@@ -4,10 +4,10 @@ import pandas as pd
 import plotly.express as px
 
 # Load the data
-acs_bloom_city = pd.read_csv('acs_bloom_city.csv')
-acs_bloom_msa = pd.read_csv('acs_bloom_msa.csv')
-acs_in = pd.read_csv('acs_in.csv')
-bls_bloom = pd.read_csv('bls_bloom.csv')
+acs_bloom_city = pd.read_csv('https://raw.githubusercontent.com/SJJC123/cob-v1/main/acs_bloom_city.csv')
+acs_bloom_msa = pd.read_csv('https://raw.githubusercontent.com/SJJC123/cob-v1/main/acs_bloom_msa.csv')
+acs_in = pd.read_csv('https://raw.githubusercontent.com/SJJC123/cob-v1/main/acs_in.csv')
+bls_bloom = pd.read_csv('https://raw.githubusercontent.com/SJJC123/cob-v1/main/bls_bloom.csv')
 
 # Add dataset labels
 acs_bloom_city['dataset'] = 'Bloomington City'
